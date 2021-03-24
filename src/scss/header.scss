@@ -1,0 +1,439 @@
+.header {
+    position: absolute;
+
+    top: 0;
+
+    width: 100%;
+
+    // background: darken($color: #fff, $amount: 75);
+
+    background: radial-gradient(46.67% 19061.72% at 50% 49.47%, rgba(31, 27, 44, 0.5) 0%, rgba(31, 27, 44, 0.02) 100%);
+
+    z-index: 100;
+
+    &__inner {
+        position: relative;
+
+        height: 95px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        color: #fff;
+
+        &_ttl {
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 1;
+        }
+        &_subttl {
+            font-weight: 500;
+            font-size: 19px;
+            line-height: 1;
+        }
+    }
+    &__right {
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+
+        height: 100%;
+
+        li {
+            position: relative;
+
+            margin-right: 40px;
+
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+
+            z-index: 100;
+
+            &:last-child {
+                margin-right: unset;
+            }
+
+            a {
+                position: relative;
+
+                height: 100%;
+
+                display: flex;
+                align-items: center;
+
+                font-weight: 500;
+                font-size: 19px;
+                line-height: 22px;
+
+                color: #FFFFFF;
+
+                &.before {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+
+                &::before {
+                    position: absolute;
+    
+                    content: "";
+    
+                    width: 0;
+                    height: 4px;
+    
+                    top: 0;
+                    left: 0;
+    
+                    background: #FF3395;
+                    box-shadow: 0px 4px 55px 6px #FF3395;
+                    border-radius: 1px;
+                }
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &__shop {
+        margin-left: 30px;
+
+        width: 96px;
+        height: 28px;
+ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 28px;
+
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 22px;
+        text-shadow: 0px 15px 35px rgba(251, 71, 255, 0.5);
+        color: #fff;
+
+        box-shadow: 0px 17px 35px -10px rgba(251, 71, 255, 0.5);
+
+        &:hover {
+            box-shadow: 0px 17px 35px 5px rgba(251, 71, 255, 0.5);
+        }
+    }
+    &__burger {
+        display: none;
+
+        border: none;
+
+        background: transparent;
+
+        margin-right: -14px;
+    }
+}
+
+.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.hamRotate.active {
+    transform: rotate(45deg);
+}
+.hamRotate180.active {
+    transform: rotate(180deg);
+}
+.line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #ffffff;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+.ham6 .top {
+    stroke-dasharray: 40px 172px;
+}
+.ham6 .middle {
+    stroke-dasharray: 40px 111px;
+}
+.ham6 .bottom {
+    stroke-dasharray: 40px 172px;
+}
+.ham6.active .top {
+    stroke-dashoffset: -132px;
+}
+.ham6.active .middle {
+    stroke-dashoffset: -71px;
+}
+.ham6.active .bottom {
+    stroke-dashoffset: -132px;
+}
+.active .line {
+    stroke: #6C5CE7 !important;
+}
+
+@media screen and (max-width: 991px) {
+    .header {
+        $margin__header_link: 30px;
+
+        &__list {
+            li {
+                margin-right: $margin__header_link;
+            }
+        } 
+        &__shop {
+            margin-left: $margin__header_link;
+        }
+    }
+}
+@media screen and (max-width: 900px) {
+    .header {
+        $margin__header_link: 25px;
+
+        &__list {
+            li {
+                margin-right: $margin__header_link;
+            }
+        } 
+        &__shop {
+            margin-left: $margin__header_link;
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .header {
+        $margin__header_link: 20px;
+
+        &__list {
+            li {
+                margin-right: $margin__header_link;
+            }
+        } 
+        &__shop {
+            margin-left: $margin__header_link; 
+        }
+        &__logo {
+            &_ttl {
+                font-size: 34px;
+            }
+            &_subttl {
+                font-size: 18px; 
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header {
+        &__inner {
+            height: 90px;
+        }
+        &__logo {
+            &_ttl {
+                font-size: 32px;
+            }
+            &_subttl {
+                font-size: 17px; 
+            }
+        }
+        &__list {
+            display: none;
+
+            position: absolute;
+
+            top: 100%;
+            left: -20px;
+
+            width: 100vw;
+            height: unset;
+
+            flex-direction: column;
+
+            li {
+                margin-right: unset;
+
+                padding: 20px 20px;
+
+                width: 100%;
+                height: unset;
+
+                border-top: 1px solid darken($color: #fff, $amount: 50);
+
+                background: darken($color: #fff, $amount: 75);
+
+                display: flex;
+                flex-direction: row-reverse;
+
+                transition: .3s ease-in-out;
+
+                a {
+                    height: unset;
+
+                    &::before {
+                        content: none; 
+                    }
+                }
+                &:hover {
+                    background: darken($color: #fff, $amount: 50);
+                }
+            }
+        }
+        &__burger {
+            display: block;
+        }
+        &__shop {
+            margin-left: unset;
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .header {
+        &__inner {
+            height: 85px;
+        }
+        &__logo {
+            &_ttl {
+                font-size: 30px;
+            }
+            &_subttl {
+                font-size: 16px; 
+            }
+        }
+        &__shop {
+            width: 96px;
+
+            font-size: 18px;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .ham.ham6 {
+        width: 70px;
+    }
+    .header {
+        &__inner {
+            height: 80px;
+        }
+        &__logo {
+            &_ttl {
+                font-size: 28px;
+            }
+            &_subttl {
+                font-size: 15px; 
+            }
+        }
+        &__shop {
+            width: 92px;
+
+            font-size: 17px;
+        }
+
+        $burger_mr: -15px;
+
+        &__burger {
+            margin-right: $burger_mr;
+        }
+        &__list {
+            left: $burger_mr;
+
+            li {
+                padding: 18px 20px;
+
+                a {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 410px) {
+    .ham.ham6 {
+        width: 60px;
+    }
+    .header {
+        &__inner {
+            height: 75px;
+        }
+        &__logo {
+            &_ttl {
+                font-size: 26px;
+            }
+            &_subttl {
+                font-size: 14px; 
+            }
+        }
+        &__shop {
+            width: 88px;
+
+            font-size: 16px;
+        }
+
+        $burger_mr: -12px;
+
+        &__burger {
+            margin-right: $burger_mr;
+        }
+        &__list {
+            left: $burger_mr;
+
+            li {
+                padding: 16px 20px;
+
+                a {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 374px) {
+    .ham.ham6 {
+        width: 50px;
+    }
+    .header {
+        &__inner {
+            height: 70px;
+        }
+        &__logo {
+            &_ttl {
+                font-size: 24px;
+            }
+            &_subttl {
+                font-size: 13px; 
+            }
+        }
+        &__shop {
+            width: 84px;
+
+            font-size: 15px;
+        }
+        
+        $burger_mr: -8px;
+
+        &__burger {
+            margin-right: $burger_mr;
+        }
+        &__list {
+            left: $burger_mr;
+
+            li {
+                padding: 14px 20px;
+
+                a {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

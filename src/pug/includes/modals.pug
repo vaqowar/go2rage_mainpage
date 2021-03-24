@@ -1,0 +1,46 @@
+mixin sysreqpopup__window_list_li(img, ttl, subttl) 
+    li 
+        .sysreqpopup__window_list_img
+            img(src="dist/img/icons/"+img, alt="")
+        .sysreqpopup__window_list_descr
+            p.sysreqpopup__window_list_ttl=ttl
+            p.sysreqpopup__window_list_subttl=subttl
+
+
+.sysreqpopup 
+    .sysreqpopup__bg
+    .sysreqpopup__window
+        .sysreqpopup__window_header 
+            p.sysreqpopup__window_header_ttl.gradient__ttl Системные требования
+            p.sysreqpopup__window_header_subttl Системные требования
+            .sysreqpopup__window_close 
+
+        .sysreqpopup__window_inner
+
+            .sysreqpopup__window_block
+                .sysreqpopup__window_block_ttl_block
+                    p.sysreqpopup__window_block_ttl Минимальные
+
+                ul.sysreqpopup__window_list
+                    +sysreqpopup__window_list_li("os01.svg", "Операционная система", "Windows 8.1 x64")
+                    +sysreqpopup__window_list_li("proc01.svg", "Процессор", "Intel Core 2 Duo 2.2 GHz, AMD Phenom 2.2 GHz")
+                    +sysreqpopup__window_list_li("videocard01.svg", "Видеокарта", "GTX 550 TI, ATI Radeon HD 4800")
+                    +sysreqpopup__window_list_li("ram01.svg", "Оперативная память", "8 ГБ")
+                    +sysreqpopup__window_list_li("display01.svg", "Разрешение экрана", "1280х720")
+                    +sysreqpopup__window_list_li("soundcard01.svg", "Звуковая карта", "Совместимая с DirectX 9")
+                    +sysreqpopup__window_list_li("lancon01.svg", "Интернет-соединение", "8 мбит/сек")
+                    +sysreqpopup__window_list_li("harddisk01.svg", "Свободное место на накопителе", "20 ГБ")
+
+            .sysreqpopup__window_block
+                .sysreqpopup__window_block_ttl_block
+                    p.sysreqpopup__window_block_ttl.gradient__ttl Рекомендуемые
+
+                ul.sysreqpopup__window_list
+                    +sysreqpopup__window_list_li("os01.svg", "Операционная система", "Windows 10 x64")
+                    +sysreqpopup__window_list_li("proc01.svg", "Процессор", "Intel Core i5 3GHz, AMD Ryzen 3GHz")
+                    +sysreqpopup__window_list_li("videocard01.svg", "Видеокарта", "nVidia GTX 1050 Ti, AMD RX 460")
+                    +sysreqpopup__window_list_li("ram01.svg", "Оперативная память", "16 ГБ")
+                    +sysreqpopup__window_list_li("display01.svg", "Разрешение экрана", "1920х1080")
+                    +sysreqpopup__window_list_li("soundcard01.svg", "Звуковая карта", "Совместимая с DirectX 9")
+                    +sysreqpopup__window_list_li("lancon01.svg", "Интернет-соединение", "50 мбит/сек")
+                    +sysreqpopup__window_list_li("harddisk01.svg", "Свободное место на накопителе", "48 ГБ")

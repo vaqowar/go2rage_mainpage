@@ -1,0 +1,38 @@
+mixin footer__socials_link(link, img)
+    li 
+        a.gradient__btn(href=link, target="blank")
+            img(src=img, alt="")
+
+mixin footer__contacts_block(txt, link)
+    .footer__contacts_block
+        p=txt
+        a(href="mailto:"+link)=link
+
+footer.footer   
+    .middle__container 
+        .footer__inner 
+            .footer__left
+                .footer__left_block
+                    .footer__logo
+                        p.footer__logo_ttl.gradient__ttl GO2RAGE
+                        p.footer__logo_subttl Народный сервер
+                    .footer__left_block_middle
+                    .footer__contacts 
+                        p.footer__contacts_ttl Наши контакты 
+                        .footer__contacts_bottom
+                            +footer__contacts_block("Cлужба поддержки", "ad@admo.pro")
+                            +footer__contacts_block("Вакансии", "ad@admo.pro")
+
+                p.footer__left_descr К оплате принимаются банковские карты: #[br] VISA, MASTERCARD, МИР
+
+                .footer__left_cards
+                    img(src="dist/img/cards01.png", alt="")
+
+            .footer__socials
+                p.footer__socials_ttl Социальные сети
+                ul.footer__socials_list
+                    +footer__socials_link(forum_link, "dist/img/icons/forum01.svg")
+                    +footer__socials_link(vk_link, "dist/img/icons/vk01.svg")
+                    +footer__socials_link(discord_link, "dist/img/icons/discord01.svg")
+
+script(src="dist/js/main.js") 

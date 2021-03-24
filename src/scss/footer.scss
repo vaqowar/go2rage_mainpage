@@ -1,0 +1,302 @@
+.footer {
+    position: relative;
+
+    padding: 30px 0 32px;
+
+    background: #1B1826;
+
+    &__inner {
+        position: relative;
+
+        display: flex;
+        justify-content: space-between;
+
+        z-index: 1;
+    }
+
+    &__logo {
+        &_ttl {
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 1;
+        }
+        &_subttl {
+            font-weight: 500;
+            font-size: 19px;
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.25);
+        }
+    }
+
+    &__contacts {
+        &_ttl {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+
+            color: #FF74A6;
+        }
+        &_bottom {
+            display: flex;
+            align-items: center;
+        }
+        &_block {
+            margin-top: 4px;
+            margin-right: 18px;
+            
+            &:last-child {
+                margin-right: unset;
+            }
+
+            p {
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 1;
+
+                color: rgba(255, 255, 255, 0.2);
+            }
+            a {
+                position: relative;
+
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1;
+
+                color: #FFFFFF;
+            
+                &::after {
+                    position: absolute;
+
+                    content: "";
+
+                    width: 0;
+                    height: 1px;
+
+                    background: #fff;
+
+                    top: 100%;
+                    left: 0;
+                }
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    } 
+
+
+    &__left {
+        &_block {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            height: auto;
+
+            &_middle {
+                margin: 0 23.5px;
+
+                width: 1px;
+                // height: calc(100/64*44%);
+                height: 44px;
+
+                background: rgba(255, 255, 255, 0.25);
+            }
+        } 
+        &_descr {
+            margin-top: 30px;
+
+            font-weight: normal;
+            font-size: 19px;
+            line-height: 137%;
+            color: rgba(255, 255, 255, 0.2);
+
+            br {
+                display: none;
+            }
+        }
+        &_cards {
+            position: relative;
+
+            margin-top: 28px;
+        }
+    } 
+
+    &__socials {
+        &_ttl {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+
+            color: rgba(255, 255, 255, 0.19);
+        }
+        &_list {
+            margin-top: 17.5px;
+
+            display: flex;
+            align-items: center;
+
+            li {
+                margin-right: 20px;
+
+                &:last-child {
+                    margin-right: unset;
+                }
+
+                a {
+                    width: 40px;
+                    height: 40px;
+                    
+                    border-radius: 50%;
+    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:hover {
+                        box-shadow: 0px 0px 10px 6px rgba(251, 71, 255, 0.5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .footer {
+        &__left {
+            &_block {
+                &_middle {
+                    margin: 0 16px; 
+                }
+            } 
+            &_descr {
+                margin-top: 20px;
+    
+                font-size: 18px;
+            }
+            &_cards {
+                margin-top: 20px;
+            }
+        }
+        &__socials {
+            
+
+            &_list {
+                margin-top: 14px;
+
+                li {
+                    margin-right: 16px;
+                }
+            } 
+        } 
+    }
+}
+@media screen and (max-width: 700px) {
+    .footer {
+        &__inner {
+            flex-direction: column;
+            align-content: center;
+        }
+        &__left {
+            &_block {
+                justify-content: space-between;
+
+                &_middle {
+                    display: none;
+                }
+            } 
+            &_descr {
+                margin-top: 24px;
+
+                text-align: center;
+
+                br {
+                    display: block;
+                }
+            }
+            &_cards {
+                margin-top: 24px;
+
+                display: flex;
+                justify-content: center;
+            }
+        }
+        &__contacts {
+            &_ttl {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+        }  
+        &__socials {
+            margin-top: 24px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &_list {
+                margin-top: 10px;
+
+                li {
+                    margin: 0 10px;
+
+                    &:last-child {
+                        margin: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .footer {
+        &__left {
+            &_descr {
+                font-size: 17px;
+            }
+        } 
+    } 
+}
+@media screen and (max-width: 500px) {
+    .footer {
+        &__left {
+            &_block {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            &_descr {
+                font-size: 16px;
+            }
+        }
+        &__contacts {
+            margin-top: 24px;
+
+            &_ttl {
+                justify-content: center;
+            }
+        } 
+    } 
+}
+@media screen and (max-width: 410px) {
+    .footer {
+        &__left {
+            &_descr {
+                font-size: 15px;
+            }
+        } 
+    } 
+}
+@media screen and (max-width: 374px) {
+    .footer {
+        &__left {
+            &_descr {
+                font-size: 14px;
+            }
+        } 
+    } 
+}

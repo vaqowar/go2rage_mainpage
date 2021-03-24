@@ -1,0 +1,179 @@
+extends ../includes/html
+
+block variables 
+    - var meta_description = "Присоединяйся к нам на лучших сервера ГТА РП со стабильным коммьюнити. Промокод: start на $ 40.000. Играй на лучших серверах GTA 5 RP."
+    - var pageTitle = "GTA 5 RP — GO2RAGE RP Официальный сайт."
+    - var vk_link = "https://vk.com/go2rage" 
+    - var discord_link = "https://discord.com/invite/FAAUD3c"
+    - var forum_link = "https://forum.go2rage.ru/"
+
+block content    
+
+    mixin intro__right_note(txt_1, txt_2, img, show)
+        if (show)
+            .intro__right_note.show
+                .intro__right_note_txt 
+                    p 
+                        =txt_1
+                        br
+                        =txt_2
+                    img(src="dist/img/icons/"+img, alt="") 
+        else                            
+            .intro__right_note
+                .intro__right_note_txt 
+                    p 
+                        =txt_1
+                        br
+                        =txt_2
+                    img(src="dist/img/icons/"+img, alt="")
+
+    .intro 
+        .main__container
+            .intro__inner
+ 
+                .intro__left
+
+                    .intro__left_dot
+                    p.intro__left_ttl.gradient__ttl GO2RAGE
+                    p.intro__left_subttl Народный сервер
+                    p.intro__left_txt 
+                        | А вы знали, что именно наш сервер является самым
+                        | #[span свежим и народным] 
+                        | по мнению наших игроков. Ведь мы работаем
+                        | над обновлениями каждый день в режиме NON-Stop, что
+                        | позволяет нам обходить всех наших конкурентов в сфере
+                        | RageMP. 
+                    a(href="https://go2rage.ru/g2rIntsaller.exe", target="_blank").intro__left_btn.gradient__btn
+                        p Скачать лаунчер
+                        img(src="dist/img/icons/arrow_right01.svg", alt="")
+                    .intro__left_btn_txt Системные требования
+
+                .intro__right 
+                    .intro__right_ellipse
+
+                    img.intro__right_airplane(src="dist/img/airplane01.png", alt="")
+                    img.intro__right_man(src="dist/img/man01.png", alt="")  
+
+                    button.intro__right_more.gradient__btn 
+                        | А ещё...
+                        img(src="dist/img/icons/arrow_right02.svg", alt="")  
+
+                    +intro__right_note(
+                        "Предложи идею,", "Мы реализуем!", 
+                        "lamp01.svg", true)
+
+                    +intro__right_note(
+                        "Собственный", "лаунчер!", 
+                        "rocket01.svg", true)
+
+                    +intro__right_note(
+                        "Открытые голосования", "за функционал", 
+                        "rocket01.svg")
+
+                    +intro__right_note(
+                        "Уникальная система", "фракций", 
+                        "rocket01.svg")
+
+                    +intro__right_note(
+                        "Выборы и", "политическая жизнь", 
+                        "rocket01.svg") 
+                    
+                    +intro__right_note(
+                        "Сбалансированная", "экономика", 
+                        "rocket01.svg")
+
+                    +intro__right_note(
+                        "Депутаты и", "парламент", 
+                        "rocket01.svg")
+
+                    +intro__right_note(
+                        "Адвокатское", "бюро", 
+                        "rocket01.svg")
+                    
+                    +intro__right_note(
+                        "Понятная", "иерархия", 
+                        "rocket01.svg")
+                    
+                    +intro__right_note(
+                        "Автономия лидеров", "фракций", 
+                        "rocket01.svg")
+                    
+                    +intro__right_note(
+                        "Случайные", "приключения", 
+                        "rocket01.svg")
+
+                    +intro__right_note(
+                        "Законодательное", "собрание", 
+                        "rocket01.svg")
+
+                    +intro__right_note(
+                        "Идеальная", "синхронизация", 
+                        "rocket01.svg")
+
+                    +intro__right_note(
+                        "Синхронизированные", "светофоры", 
+                        "rocket01.svg")
+                    
+                    +intro__right_note(
+                        "Камеры контроля", "скорости в городе", 
+                        "rocket01.svg")
+
+    mixin insocials__block_trans(link)
+        a(href=link, target="_blank").insocials__block_trans Перейти
+
+    mixin insocials__block_ttl(img, ttl)
+        .insocials__block_ttl
+            .insocials__block_ttl_icon.gradient__btn
+                img(src="dist/img/icons/"+img, alt="")
+            p=ttl 
+
+    .insocials 
+        .middle__container
+            .insocials__ttl_block
+                p.insocials__ttl.gradient__ttl Мы в социальных сетях
+                p.insocials__ttl_shadow Мы в социальных сетях
+            p.insocials__subttl Следи за нами на любой удобной тебе платформе.
+
+            .insocials__cont
+
+                .insocials__block
+                    img.insocials__block_bg(src="dist/img/insocials01.jpg", alt="")
+
+                    img.insocials__block_img(src="dist/img/vk01.png", alt="")
+
+                    +insocials__block_ttl("vk01.svg", "Мы ВКонтакте")
+
+                    p.insocials__block_txt 
+                        | Постоянные розыгрыши,
+                        | обновления и остальные новости
+                        | ждут Вас.
+
+                    +insocials__block_trans(vk_link)
+
+                .insocials__block
+                    img.insocials__block_bg(src="dist/img/insocials02.jpg", alt="")
+
+                    img.insocials__block_img(src="dist/img/discord01.png", alt="")
+
+                    +insocials__block_ttl("discord01.svg", "Мы в Discord")
+
+                    p.insocials__block_txt 
+                        | Постоянные розыгрыши,
+                        | обновления и остальные новости
+                        | ждут Вас.
+
+                    +insocials__block_trans(discord_link)
+
+                .insocials__block
+                    img.insocials__block_bg(src="dist/img/insocials03.jpg", alt="")
+
+                    img.insocials__block_img(src="dist/img/forum01.png", alt="")
+
+                    +insocials__block_ttl("forum01.svg", "Наш форум")
+
+                    p.insocials__block_txt 
+                        | Постоянные розыгрыши,
+                        | обновления и остальные новости
+                        | ждут Вас.
+
+                    +insocials__block_trans(forum_link)
