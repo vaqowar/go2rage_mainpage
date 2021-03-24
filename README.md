@@ -1,1 +1,1 @@
-# go2rage_mainpage
+[https://vaqowar.github.io/go2rage_mainpage/](https://vaqowar.github.io/go2rage_mainpage/)
